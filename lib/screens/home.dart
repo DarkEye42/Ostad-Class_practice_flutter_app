@@ -35,10 +35,11 @@ class Home extends StatelessWidget {
           ),
         ),
         shape: const RoundedRectangleBorder(
-            borderRadius: BorderRadius.only(
-          bottomLeft: Radius.circular(20),
-          bottomRight: Radius.circular(20),
-        )),
+          borderRadius: BorderRadius.only(
+            bottomLeft: Radius.circular(20),
+            bottomRight: Radius.circular(20),
+          ),
+        ),
       ),
       backgroundColor: Colors.white,
       body: Center(
@@ -68,7 +69,6 @@ class Home extends StatelessWidget {
                     color: Colors.black,
                   ),
                 ),
-
                 Icon(
                   Icons.android,
                   size: 84,
@@ -88,6 +88,31 @@ class Home extends StatelessWidget {
               height: 200,
               fit: BoxFit.scaleDown,
             ),
+            TextButton(
+              onPressed: null,
+              style: ButtonStyle(
+                backgroundColor: MaterialStateProperty.all<Color>(Colors.blueAccent),
+                padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
+                    const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
+                ),
+                shape: MaterialStateProperty.all<OutlinedBorder>(
+                  RoundedRectangleBorder(
+                    borderRadius: BorderRadius.circular(20), // Adjust the radius as needed
+                  ),
+                ),
+              ),
+              child: Text(
+                'Text Button',
+                textAlign: TextAlign.center,
+                style: const TextStyle(
+                  color: Colors.white,
+                  fontSize: 18,
+                  fontWeight: FontWeight.w400,
+                ),
+                selectionColor: Colors.blue[900],
+              ),
+            )
+
           ],
         ),
       ),
