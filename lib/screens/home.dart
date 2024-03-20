@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../widgets/customIconButton.dart';
+
 class Home extends StatelessWidget {
   const Home({super.key});
 
@@ -48,54 +50,13 @@ class Home extends StatelessWidget {
           color: Colors.green[500],
           size: 36,
         ),
-        actions: [
-          IconButton(
-            onPressed: () {
-              showDialog(
-                  context: context,
-                  barrierDismissible: false,
-                  builder: (context) {
-                    return AlertDialog(
-                      title: const Text('Send money'),
-                      content:
-                          const Text('Are you sure that you want to send money?'),
-                      actions: [
-                        Row(
-                          children: [
-                            IconButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text('Money has been transferred'),
-                                    backgroundColor: Colors.green,
-                                    duration: Duration(seconds: 2),
-                                  ),
-                                );
-                              },
-                              icon: const Icon(Icons.check),
-                            ),
-                            IconButton(
-                              onPressed: () {
-                                Navigator.of(context).pop();
-                                ScaffoldMessenger.of(context).showSnackBar(
-                                  const SnackBar(
-                                    content: Text('Money has not been transferred'),
-                                    backgroundColor: Colors.redAccent,
-                                    duration: Duration(seconds: 2),
-                                  ),
-                                );
-                              },
-                              icon: const Icon(Icons.close),
-                            ),
-                          ],
-                        )
-                      ],
-                    );
-                  });
-            },
-            icon: const Icon(Icons.add),
-          ),
+        actions: const [
+          IconButtonWidget(
+              title: 'Send money',
+              content: 'Are you sure that you want to send money?',
+              successText: 'Money has been transferred',
+              errorText: 'Money has been transferred',
+              iconName: Icons.add)
         ],
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
@@ -119,7 +80,7 @@ class Home extends StatelessWidget {
                 color: Colors.black,
               ),
             ),
-            const Row(
+            Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
