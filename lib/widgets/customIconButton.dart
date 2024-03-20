@@ -33,7 +33,7 @@ class IconButtonWidget extends StatelessWidget {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(successText),
-                            backgroundColor: Colors.green,
+                            backgroundColor: Colors.green.shade400,
                             duration: const Duration(seconds: 2),
                           ),
                         );
@@ -46,7 +46,7 @@ class IconButtonWidget extends StatelessWidget {
                         ScaffoldMessenger.of(context).showSnackBar(
                           SnackBar(
                             content: Text(errorText),
-                            backgroundColor: Colors.redAccent,
+                            backgroundColor: Colors.red.shade300,
                             duration: const Duration(seconds: 2),
                           ),
                         );

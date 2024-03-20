@@ -9,7 +9,7 @@ class Home extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
-        backgroundColor: Colors.white,
+        backgroundColor: Colors.green.shade300,
         elevation: 5,
         shadowColor: Colors.grey[200],
         // title: Center(
@@ -45,9 +45,9 @@ class Home extends StatelessWidget {
             color: Colors.black,
           ),
         ),
-        leading: Icon(
+        leading: const Icon(
           Icons.android,
-          color: Colors.green[500],
+          color: Colors.white,
           size: 36,
         ),
         actions: const [
@@ -55,7 +55,7 @@ class Home extends StatelessWidget {
               title: 'Send money',
               content: 'Are you sure that you want to send money?',
               successText: 'Money has been transferred',
-              errorText: 'Money has been transferred',
+              errorText: 'Money has not been transferred',
               iconName: Icons.add)
         ],
         shape: const RoundedRectangleBorder(
@@ -65,7 +65,7 @@ class Home extends StatelessWidget {
           ),
         ),
       ),
-      backgroundColor: Colors.white,
+      backgroundColor: Colors.blue.shade50,
       body: Center(
         child: Column(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -76,11 +76,10 @@ class Home extends StatelessWidget {
               style: TextStyle(
                 fontWeight: FontWeight.w600,
                 fontSize: 24,
-                backgroundColor: Colors.white70,
                 color: Colors.black,
               ),
             ),
-            Row(
+            const Row(
               mainAxisAlignment: MainAxisAlignment.spaceEvenly,
               children: [
                 Text(
@@ -89,7 +88,6 @@ class Home extends StatelessWidget {
                   style: TextStyle(
                     fontWeight: FontWeight.w600,
                     fontSize: 18,
-                    backgroundColor: Colors.white70,
                     color: Colors.black,
                   ),
                 ),
