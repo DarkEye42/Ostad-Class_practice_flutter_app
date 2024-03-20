@@ -10,34 +10,97 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 5,
         shadowColor: Colors.grey[200],
-        title: Center(
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(
-                Icons.android,
-                color: Colors.green[500],
-                size: 36,
-              ),
-              const SizedBox(
-                width: 10,
-              ),
-              const Text(
-                'App Title',
-                textAlign: TextAlign.center,
-                style: TextStyle(
-                  fontWeight: FontWeight.w600,
-                  fontSize: 24,
-                  color: Colors.black,
-                ),
-              ),
-            ],
+        // title: Center(
+        //   child: Row(
+        //     mainAxisAlignment: MainAxisAlignment.center,
+        //     children: [
+        //       Icon(
+        //         Icons.android,
+        //         color: Colors.green[500],
+        //         size: 36,
+        //       ),
+        //       const SizedBox(
+        //         width: 10,
+        //       ),
+        //       const Text(
+        //         'App Title',
+        //         textAlign: TextAlign.center,
+        //         style: TextStyle(
+        //           fontWeight: FontWeight.w600,
+        //           fontSize: 24,
+        //           color: Colors.black,
+        //         ),
+        //       ),
+        //     ],
+        //   ),
+        // ),
+        title: const Text(
+          'App Title',
+          textAlign: TextAlign.center,
+          style: TextStyle(
+            fontWeight: FontWeight.w600,
+            fontSize: 24,
+            color: Colors.black,
           ),
         ),
+        leading: Icon(
+          Icons.android,
+          color: Colors.green[500],
+          size: 36,
+        ),
+        actions: [
+          IconButton(
+            onPressed: () {
+              showDialog(
+                  context: context,
+                  barrierDismissible: false,
+                  builder: (context) {
+                    return AlertDialog(
+                      title: const Text('Send money'),
+                      content:
+                          const Text('Are you sure that you want to send money?'),
+                      actions: [
+                        Row(
+                          children: [
+                            IconButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text('Money has been transferred'),
+                                    backgroundColor: Colors.green,
+                                    duration: Duration(seconds: 2),
+                                  ),
+                                );
+                              },
+                              icon: const Icon(Icons.check),
+                            ),
+                            IconButton(
+                              onPressed: () {
+                                Navigator.of(context).pop();
+                                ScaffoldMessenger.of(context).showSnackBar(
+                                  const SnackBar(
+                                    content: Text('Money has not been transferred'),
+                                    backgroundColor: Colors.redAccent,
+                                    duration: Duration(seconds: 2),
+                                  ),
+                                );
+                              },
+                              icon: const Icon(Icons.close),
+                            ),
+                          ],
+                        )
+                      ],
+                    );
+                  });
+            },
+            icon: const Icon(Icons.add),
+          ),
+        ],
         shape: const RoundedRectangleBorder(
           borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(20),
-            bottomRight: Radius.circular(20),
+            bottomLeft: Radius.circular(10),
+            bottomRight: Radius.circular(10),
           ),
         ),
       ),
@@ -91,13 +154,15 @@ class Home extends StatelessWidget {
             TextButton(
               onPressed: null,
               style: ButtonStyle(
-                backgroundColor: MaterialStateProperty.all<Color>(Colors.blueAccent),
+                backgroundColor:
+                    MaterialStateProperty.all<Color>(Colors.blueAccent),
                 padding: MaterialStateProperty.all<EdgeInsetsGeometry>(
-                    const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
+                  const EdgeInsets.symmetric(horizontal: 100, vertical: 20),
                 ),
                 shape: MaterialStateProperty.all<OutlinedBorder>(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(20), // Adjust the radius as needed
+                    borderRadius: BorderRadius.circular(
+                        20), // Adjust the radius as needed
                   ),
                 ),
               ),
@@ -112,7 +177,6 @@ class Home extends StatelessWidget {
                 selectionColor: Colors.blue[900],
               ),
             )
-
           ],
         ),
       ),
