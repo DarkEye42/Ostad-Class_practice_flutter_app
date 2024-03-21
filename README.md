@@ -4,7 +4,7 @@ This is a practice Flutter project.
 
 # Changes
 
-Login page designed
+### **Login page designed**
 
 <img alt="User Login Page" src="https://github.com/DarkEye42/Ostad-Class_practice_flutter_app/blob/master/images/screenshot.png" title="Flutter Simple Login" width="200"/>
 
