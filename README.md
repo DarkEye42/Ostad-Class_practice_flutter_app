@@ -6,7 +6,7 @@ This is a practice Flutter project.
 
 Login page designed
 
-![User Login Page](https://github.com/DarkEye42/Ostad-Class_practice_flutter_app/blob/master/images/screenshot.png)
+![User Login Page](https://github.com/DarkEye42/Ostad-Class_practice_flutter_app/blob/master/images/screenshot.png){width=200px}
 
 ## Getting Started
 
