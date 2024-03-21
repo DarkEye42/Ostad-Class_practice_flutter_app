@@ -2,7 +2,7 @@
 
 This is a practice Flutter project.
 
-# New Changes
+## New Changes
 
 * **19/03/2024 - Scaffold | Column | Row | Dialog | bottom sheet | Snack bar | Custom Widget added**
 * **21/03/2024 - Login Page Designed | Custom Button | Custom Text Field | Square Tile Added**
