@@ -1,3 +1,4 @@
+import 'package:class_practice/screens/login_page.dart';
 import 'package:flutter/material.dart';
 
 import '../widgets/customIconButton.dart';
@@ -12,30 +13,6 @@ class Home extends StatelessWidget {
         backgroundColor: Colors.green.shade300,
         elevation: 5,
         shadowColor: Colors.grey[200],
-        // title: Center(
-        //   child: Row(
-        //     mainAxisAlignment: MainAxisAlignment.center,
-        //     children: [
-        //       Icon(
-        //         Icons.android,
-        //         color: Colors.green[500],
-        //         size: 36,
-        //       ),
-        //       const SizedBox(
-        //         width: 10,
-        //       ),
-        //       const Text(
-        //         'App Title',
-        //         textAlign: TextAlign.center,
-        //         style: TextStyle(
-        //           fontWeight: FontWeight.w600,
-        //           fontSize: 24,
-        //           color: Colors.black,
-        //         ),
-        //       ),
-        //     ],
-        //   ),
-        // ),
         title: const Text(
           'App Title',
           textAlign: TextAlign.center,
@@ -111,7 +88,9 @@ class Home extends StatelessWidget {
               fit: BoxFit.scaleDown,
             ),
             TextButton(
-              onPressed: null,
+              onPressed: () {
+                Navigator.pop(context);
+              },
               style: ButtonStyle(
                 backgroundColor:
                     MaterialStateProperty.all<Color>(Colors.blueAccent),
@@ -120,8 +99,7 @@ class Home extends StatelessWidget {
                 ),
                 shape: MaterialStateProperty.all<OutlinedBorder>(
                   RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(
-                        20), // Adjust the radius as needed
+                    borderRadius: BorderRadius.circular(20), // Adjust the radius as needed
                   ),
                 ),
               ),
